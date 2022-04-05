@@ -1,0 +1,397 @@
+\chapter{Análise de mercado}
+
+\section{Nome comercial e conceito para o produto}
+
+% O <produto> é um ecossistema de serviços que visa facilitar e agilizar as necessidades de locomoção dentro e entre os campi da UnB.
+O \nomeproduto\ é um ecossistema de serviços que visa facilitar e agilizar as necessidades de locomoção dentro e entre os campi da UnB.
+
+
+\section{Mercado-alvo}
+
+\subsection{Consumidor final}
+
+% O <produto> irá atender todos que possuem algum vínculo com a UnB, sendo eles: estudantes e servidores (professores, funcionários, etc.).
+O \nomeproduto\ irá atender todos que possuem algum vínculo com a UnB, sendo eles: estudantes e servidores (professores, funcionários, etc.).
+
+
+\subsection{Cliente responsável pela comercialização}
+
+% O <produto> será implantado pela própria UnB, não sendo necessário a utilização de um distribuidor para a comercialização.
+O \nomeproduto\ será implantado pela própria UnB, não sendo necessário a utilização de um distribuidor para a comercialização.
+
+
+\section{Requisitos}
+
+% De forma geral, são exigências, recursos, objetivos e utilidades que um sistema precisa oferecer ou cumprir, estando de acordo com as necessidades levantadas pela empresa e usuários.
+De forma geral, são exigências, recursos, objetivos e utilidades que um sistema precisa oferecer ou cumprir, correspondendo às necessidades levantadas pela empresa e usuários.
+
+\subsection{Consumidor final}
+
+Os requisitos do consumidor final podem ser divididos em requisitos funcionais e não-funcionais. Os requisitos funcionais podem ser divididos hierarquicamente segundo a estrutura de Épicos-Funcionalidades-Requisitos, enquanto os não-funcionais, por sua natureza, não são associados a uma funcionalidade ou épico.
+
+
+\subsubsection{Épicos}
+
+% Épico é um módulo que contém grande parte do trabalho a ser realizado no produto desenvolvido, e que pode ser dividido expressando de forma macro a necessidade global da aplicação. Sendo suficiente para ter valor de negócio no seu uso.
+Épico é um módulo que contém grande parte do trabalho a ser realizado no produto desenvolvido, e pode ser dividido expressando de forma macro a necessidade global da aplicação. Um levantamento de Épicos do projeto foi realizado e apresentado na \cref{tab:epicos}.
+
+\begin{table}[htbp]
+    \centering
+    \small
+    \begin{tabular}{ll}
+        \toprule
+        \thead{ID} & \thead{Descrição}      \\
+        \midrule
+        EP01       & Transporte intracampus \\
+        EP02       & Transporte intercampus \\
+        EP03       & Aplicação gerenciadora \\
+        \bottomrule
+    \end{tabular}
+    \caption{Tabela de Épicos do projeto.}
+    \label{tab:epicos}
+\end{table}
+
+
+\subsubsection{Funcionalidades}
+
+% Uma Feature é uma explicação informal e geral sobre um recurso de software escrito a partir da perspectiva do usuário final. Seu objetivo é articular como um recurso de software pode gerar valor para o cliente.
+Uma Funcionalidade é uma explicação informal e geral sobre um recurso de \estrangeirismo{software} escrito a partir da perspectiva do usuário final. Seu objetivo é articular como um recurso de \estrangeirismo{software} pode gerar valor para o cliente. Um levantamento das Funcionalidades foi realizado e apresentado na \cref{tab:funcionalidades}.
+
+\begin{table}[htbp]
+    % 2022-03-08
+    \centering
+    \small
+    \begin{tabular}{lp{0.75\textwidth}r}
+        \toprule
+        \thead{ID} & \thead{Descrição}                                       & \thead{EP} \\
+        \midrule
+        FT01       & Transporte de curta distância                           & EP01       \\
+        FT02       & Transporte de longa distância.                          & EP02       \\
+        FT03       & Posto de empréstimo.                                    & EP01       \\
+        FT04       & Dispositivo embarcado do transporte de curta distância. & EP01       \\
+        FT05       & Autenticação de usuário.                                & EP03       \\
+        FT06       & Gerenciamento de empréstimos.                           & EP03       \\
+        FT07       & Painel de informações ao usuário.                       & EP03       \\
+        FT08       & Relatórios de uso.                                      & EP03       \\
+        \bottomrule
+    \end{tabular}
+    \caption{Tabela de Funcionalidades do projeto.}
+    \label{tab:funcionalidades}
+\end{table}
+
+
+\subsubsection{Requisitos Funcionais}
+
+% Estão relacionados às funcionalidades que o software desenvolvido deve atender em relação à empresa e seus usuários. Além disso, neste tópico também contém a maneira que o software responderá as ações executadas dentro do programa.
+Estão relacionados às funcionalidades que o \estrangeirismo{software} desenvolvido deve atender em relação à empresa e seus usuários. Além disso, neste tópico também contém a maneira que o \estrangeirismo{software} responderá às ações executadas no programa. Um levantamento dos requisitos funcionais foi realizado, e estes foram divididos em categorias e apresentados nas \cref{tab:reqFunSistema,tab:reqFunEmbarcado,tab:reqFunFonte,tab:reqFunPatinete,tab:reqFunPosto}.
+
+\begin{table}[htbp]
+    % 2022-03-08
+    \centering
+    \small
+    \begin{tabular}{lp{0.75\textwidth}r}
+        \toprule
+        \thead{ID} & \thead{Descrição}                                                                                                               & \thead{FT} \\
+        \midrule
+        RF01       & O Sistema deve verificar se o usuário faz parte do grupo de beneficiados.                                                       & FT05       \\
+        RF02       & O sistema deve oferecer autenticação em dois níveis de acesso, sendo eles: \estrangeirismo{User} e \estrangeirismo{Admin}.      & FT05       \\
+        RF03       & O sistema deve permitir que o \estrangeirismo{Admin} cadastre veículos elétricos.                                               & FT06       \\
+        RF04       & O sistema deve permitir que o usuário solicite o empréstimo de um veículo que esteja disponível.                                & FT06       \\
+        RF05       & O sistema deve permitir que o usuário devolva o veículo elétrico solicitado no empréstimo.                                      & FT06       \\
+        RF06       & O sistema deve ter como métodos de identificação para o empréstimo de um patinete elétrico, imagem ou código QRCode.            & FT06       \\
+        RF07       & O sistema deve estar integrado a algum mecanismo de mapas (Ex. Google Maps).                                                    & FT07       \\
+        RF08       & O sistema deve mostrar no mapa os pontos onde há veículos disponíveis para empréstimo.                                          & FT07       \\
+        RF09       & O sistema deve apresentar um relatório ao usuário informando o tempo utilizando patinetes durante o mês.                        & FT08       \\
+        RF10       & O sistema deve apresentar um relatório ao usuário informando a distância percorrida no mês.                                     & FT08       \\
+        RF11       & O sistema deve apresentar um relatório ao usuário informando o consumo energético.                                              & FT08       \\
+        RF12       & O sistema deve apresentar um relatório ao usuário mostrando o mapa de calor pelo uso de patinetes durante o mês.                & FT08       \\
+        RF13       & O sistema deve apresentar aos administradores um relatório de entrada e saída de patinetes por ponto e tempo (hora, dia e mês). & FT08       \\
+        RF14       & O sistema deve apresentar aos administradores um mapa de calor das localizações dos veículos.                                   & FT08       \\
+        RF15       & O sistema deve mostrar aos administradores a localização atual de um determinado veículo.                                       & FT08       \\
+        RF16       & O sistema deve mostrar aos administradores o consumo energético dos pontos de abastecimentos e dos veículos.                    & FT08       \\
+        RF17       & O sistema deve mostrar aos administradores relatórios anônimos sobre os usuários de forma individual e coletiva.                & FT08       \\
+        RF18       & O sistema deve mostrar aos administradores a relação entre locais de retirada e devolução.                                      & FT08       \\
+        RF19       & O sistema deve mostrar ao usuário os horários de chegada e saída do intercampi.                                                 & FT07       \\
+        RF20       & O sistema deve mostrar ao usuário orientações sobre como utilizar o serviço intercampi.                                         & FT07       \\
+        RF21       & O sistema deve mostrar ao usuário orientações sobre como utilizar o serviço intracampi.                                         & FT07       \\
+        RF22       & O sistema deve possuir uma política de uso e privacidade.                                                                       & FT07       \\
+        RF23       & O sistema deve restringir o uso da aplicação aos usuários que aceitarem a política de uso e privacidade.                        & FT07       \\
+        \bottomrule
+    \end{tabular}
+    \caption{Tabela de requisitos funcionais do sistema.}
+    \label{tab:reqFunSistema}
+\end{table}
+
+\begin{table}[htbp]
+    % 2022-03-08
+    \centering
+    \small
+    \begin{tabular}{lp{0.75\textwidth}r}
+        \toprule
+        \thead{ID} & \thead{Descrição}                                                                           & \thead{FT} \\
+        \midrule
+        RF24       & O dispositivo deve possuir uma bateria própria.                                             & FT04       \\
+        RF25       & O dispositivo deve possuir um módulo de GPS.                                                & FT04       \\
+        RF26       & O dispositivo deve ser abastecido pela bateria do veículo.                                  & FT04       \\
+        RF27       & O dispositivo deve transferir os dados armazenados via conexão celular.                     & FT04       \\
+        RF28       & O dispositivo deve disparar o alarme quando o usuário ultrapassar 10 km do centro do campus & FT04       \\
+        \bottomrule
+    \end{tabular}
+    \caption{Tabela de requisitos funcionais do dispositivo embarcado.}
+    \label{tab:reqFunEmbarcado}
+\end{table}
+
+\begin{table}[htbp]
+    % 2022-03-08
+    \centering
+    \small
+    \begin{tabular}{lp{0.75\textwidth}r}
+        \toprule
+        \thead{ID} & \thead{Descrição}                                          & \thead{FT} \\
+        \midrule
+        RF30       & Deve ser instalada uma fonte de alimentação em cada posto. & FT03       \\
+        RF31       & A fonte deve utilizar a rede elétrica da universidade.     & FT03       \\
+        RF32       & A fonte deve abastecer o veículo.                          & FT03       \\
+        \bottomrule
+    \end{tabular}
+    \caption{Tabela de requisitos funcionais da alimentação elétrica.}
+    \label{tab:reqFunFonte}
+\end{table}
+
+\begin{table}[htbp]
+    % 2022-03-08
+    \centering
+    \small
+    \begin{tabular}{lp{0.75\textwidth}r}
+        \toprule
+        \thead{ID} & \thead{Descrição}                                                                        & \thead{FT} \\
+        \midrule
+        RF33       & O posto deve ser instalado em pontos estratégicos espalhados nos campus da universidade. & FT03       \\
+        RF34       & O posto deve possuir um sistema de trava para os veículos.                               & FT03       \\
+        \bottomrule
+    \end{tabular}
+    \caption{Tabela de requisitos funcionais do posto de empréstimo.}
+    \label{tab:reqFunPosto}
+\end{table}
+
+\begin{table}[htbp]
+    % 2022-03-08
+    \centering
+    \small
+    \begin{tabular}{lp{0.75\textwidth}r}
+        \toprule
+        \thead{ID} & \thead{Descrição}                                    & \thead{FT} \\
+        \midrule
+        RF35       & O veículo deve possuir tração assistida.             & FT01       \\
+        RF36       & O veículo deve mostrar o nível de bateria disponível & FT01       \\
+        RF37       & O veículo deve possuir um velocímetro                & FT01       \\
+        RF38       & O veículo deve possuir um odômetro                   & FT01       \\
+        \bottomrule
+    \end{tabular}
+    \caption{Tabela de requisitos funcionais do patinete elétrico.}
+    \label{tab:reqFunPatinete}
+\end{table}
+
+
+\subsubsection{Requisitos Não-Funcionais}
+
+% Ao contrário dos funcionais, que precisam ser determinados para o bom desempenho do sistema, os requisitos não-funcionais são implícitos, ou seja, apresentam características gerais do software, sendo procedimentos já esperados pelo cliente, sem que exista a necessidade de serem diretamente pedidos.
+Ao contrário dos requisitos funcionais, que precisam ser determinados para o bom desempenho do sistema, os requisitos não-funcionais são implícitos, ou seja, apresentam características gerais do \estrangeirismo{software}, procedimentos já esperados pelo cliente, sem que exista a necessidade de serem diretamente pedidos. Os requisitos não-funcionais do projeto foram levantados e apresentados na \cref{tab:reqNaoFun}
+
+\begin{table}[htbp]
+    % 2022-03-08
+    \centering
+    \small
+    \begin{tabular}{lp{0.75\textwidth}}
+        \toprule
+        \thead{ID} & \thead{Descrição}                                                                  \\
+        \midrule
+        RNF01      & O ecossistema deve atender todos os campi da UnB.                                  \\
+        RNF02      & O aplicativo deve ter suporte para iOS, Android e Web.                             \\
+        RNF03      & O aplicativo deve ter acesso a Internet.                                           \\
+        RNF04      & O aplicativo deve ter interfaces responsivas.                                      \\
+        RNF05      & A universidade deve possuir infraestrutura para a circulação dos patinetes.        \\
+        RNF06      & O sistema deve seguir as diretrizes da LGPD para tratamento de dados dos usuários. \\
+        RNF07      & O número de patinetes deve ser condizente com a demanda.                           \\
+        RNF09      & O sistema deve usar o OAuth da UnB.                                                \\
+        RNF10      & O ecossistema deve funcionar 24/7.                                                 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Tabela de requisitos não-funcionais.}
+    \label{tab:reqNaoFun}
+\end{table}
+
+
+\subsection{Cliente responsável pela comercialização}
+
+% Conforme esclarecido, o produto não será comercializado. A Universidade de Brasília será a responsável pela implantação e empréstimo dos veículos. Esse tópico comporta os requisitos necessários para que esse controle seja feito.
+Conforme esclarecido, o produto não será comercializado. A Universidade de Brasília será a responsável pela implementação e empréstimo dos veículos. Esse tópico comporta os requisitos necessários para que esse controle seja feito. Esses requisitos foram levantados e apresentados na \cref{tab:reqCliente}.
+
+\begin{table}[htbp]
+    % 2022-03-08
+    \centering
+    \small
+    \begin{tabular}{lp{0.75\textwidth}}
+        \toprule
+        \thead{ID} & \thead{Descrição}                                                                                    \\
+        \midrule
+        RC01       & O usuário não deve ultrapassar a cerca geográfica por mais de 20 minutos                             \\
+        RC02       & O usuário deve devolver o veículo em até \SI{4}{\hour}                                               \\
+        RC03       & O pagamento da multa deve ser feito para a Conta Única do Tesouro                                    \\
+        RC04       & Para cada dia de atraso na devolução é adicionado \reais{5} de multa                                 \\
+        RC05       & Para cada minuto fora da cerca geográfica, além dos 20 minutos permitidos, é adicionado \reais{0.50} \\
+        \bottomrule
+    \end{tabular}
+    \caption{Tabela de requisitos de comercialização.}
+    \label{tab:reqCliente}
+\end{table}
+
+
+\subsection{Legislação/Normas}
+
+% O Mobi UnB seguirá a legislação vigente no País de proteção de dados a Lei Geral de Proteção de Dados Pessoais (LGPD ou LGPDP), Lei nº 13.709/2018, que regula o tratamento de dados pessoais. A LGPD estabelece novos conceitos jurídicos(“dados pessoais sensíveis") e determina como os dados pessoais são tratados.
+O \nomeproduto\ seguirá a legislação vigente no País de proteção de dados a Lei Geral de Proteção de Dados Pessoais (LGPD ou LGPDP), Lei~Nº~\num{13709}, de 14 de Agosto de 2018, que regula o tratamento de dados pessoais~\cite{LGPD}. A LGPD estabelece novos conceitos jurídicos (``dados pessoais sensíveis'') e determina como os dados pessoais são tratados.
+
+% Os veículos que servirão como meio de transporte utilizados para empréstimos na plataforma deverão seguir a legislação vigente no Distrito Federal determinada pelos órgãos de trânsito como o CONTRAN (Conselho Nacional de Trânsito),  DETRAN-DF (Departamento de Trânsito do Distrito Federal), DER-DF (Departamento de Estradas de Rodagem) como os limites de velocidade em locais de circulação de pedestres (com limite de velocidade de 06 km/h) e ciclovias ou ciclofaixas (com limite de 20 km/h), sendo vetado o seu uso em faixas de rolamento (DETRAN, 2019). As regras também incluem a indicação de equipamentos de segurança e orientações para o correto estacionamento. Observando o que diz o Código de Trânsito Brasileiro (CTB) para o uso de veículos.
+Os veículos que servirão como meio de transporte utilizados para empréstimos na plataforma deverão seguir a legislação vigente no Distrito Federal determinada pelos órgãos de trânsito como o CONTRAN (Conselho Nacional de Trânsito),  DETRAN-DF, e DER-DF, como os limites de velocidade em locais de circulação de pedestres (com limite de velocidade de \SI{6}{\km\per\hour}) e ciclovias ou ciclofaixas (com limite de \SI{20}{\km\per\hour}), sendo vetado o seu uso em faixas de rolamento~\cite{detran2019}. As regras também incluem a indicação de equipamentos de segurança e orientações para o correto estacionamento, observando o que diz o Código de Trânsito Brasileiro (CTB) para o uso de veículos~\cite{CTB}.
+
+
+\section{Justificativa}
+
+\textcolor{red}{Ficou de ser feita pelo Renato Britto Araújo.}
+
+
+\section{Indicadores}
+
+% Os indicadores têm o papel de auxiliar na medição do planejamento do produto, além de contribuir para uma visão mais estratégica. Abaixo é listado os indicadores que mais agregam na concepção do produto.
+Os indicadores de mercado consumidor têm o papel de auxiliar na medição do planejamento do produto, além de contribuir para uma visão mais estratégica. Na \cref{tab:indicadores} foram listados os indicadores que mais agregam na concepção do produto.
+% \begin{landscape}
+\begin{table}
+    \centering
+    \let\temp\theadfont
+    \renewcommand{\theadfont}{\scriptsize}
+    \tiny
+    \begin{tabular}{p{0.23\textwidth}p{0.3\textwidth}p{0.25\textwidth}r}
+        \toprule
+        \thead{Indicador}                                                                                             &
+        \thead{Descrição}                                                                                             &
+        \thead{Cálculo}                                                                                               &
+        \thead{Valor}                                                                                                   \\
+        \midrule
+        \multirow[t]{4}{0.23\textwidth}{Número de beneficiados por campus}                                            &
+        Beneficiados no Campus Darcy Ribeiro                                                                          &
+        \multirow[t]{4}{0.25\textwidth}{Soma dos alunos, docentes e servidores de cada campus~\cite{estatistica2020}} &
+        \num{43820}                                                                                                     \\
+                                                                                                                      &
+        Beneficiados no Campus UnB Planaltina                                                                         &
+                                                                                                                      &
+        \num{2936}                                                                                                      \\
+                                                                                                                      &
+        Beneficiados no Campus UnB Planaltina                                                                         &
+                                                                                                                      &
+        \num{1493}                                                                                                      \\
+                                                                                                                      &
+        Beneficiados no Campus UnB Gama                                                                               &
+                                                                                                                      &
+        \num{2689}                                                                                                      \\
+        \midrule
+        \multirow[t]{4}{0.23\textwidth}{Tamanho por campus em \unit{\meter\squared}}                                  &
+        Tamanho do campus Darcy Ribeiro                                                                               &
+        \multirow[t]{4}{0.25\textwidth}{Área urbanizada de cada campus~\cite{estatistica2020}}                        &
+        \num{1818854}                                                                                                   \\
+                                                                                                                      &
+        Tamanho do campus Ceilândia                                                                                   &
+                                                                                                                      &
+        \num{7800}                                                                                                      \\
+                                                                                                                      &
+        Tamanho do campus Planaltina                                                                                  &
+                                                                                                                      &
+        \num{9055}                                                                                                      \\
+                                                                                                                      &
+        Tamanho do campus Gama                                                                                        &
+                                                                                                                      &
+        \num{4292}                                                                                                      \\
+        \midrule
+        Autonomia da bateria do patinete                                                                              &
+        Quantidade de quilômetros que o patinete é capaz de circular com a carga total                                &
+        Média da autonomia dos patinetes elétricos disponíveis no mercado                                             &
+        \SI{20}{\km}                                                                                                    \\
+        \midrule
+        Tempo de recarga do patinete                                                                                  &
+        Tempo, em horas, para recarregar completamente a bateria                                                      &
+        Média do tempo de recarga da bateria dos patinetes elétricos disponíveis no mercado                           &
+        \SI{5}{\hour}                                                                                                   \\
+        \midrule
+        Carga da bateria                                                                                              &
+        Quantidade de carga total, em Ampère-hora, da bateria do patinete                                             &
+        Média da carga da bateria dos patinetes elétricos disponíveis no mercado                                      &
+        \SI{7,8}{\ampere\hour}                                                                                          \\
+        \bottomrule
+    \end{tabular}
+    \caption{Indicadores do Mercado Consumidor}
+    \label{tab:indicadores}
+    \let\theadfont\temp % chktex 1
+\end{table}
+% \end{landscape}
+
+
+\section{Concorrência}
+
+% Em um planejamento estratégico, uma etapa importante é caracterizar os potenciais concorrentes do produto a fim de identificar os pontos que  devemos priorizar para ter destaque no mercado. Nesse tópico será abordado alguns deles, considerando seus valores e principais características.
+Em um planejamento estratégico, uma etapa importante é caracterizar os potenciais concorrentes do produto a fim de identificar os pontos que  devemos priorizar para ter destaque no mercado. Nas \cref{sec:grin,sec:flipon,sec:itau} serão abordados alguns deles, considerando seus valores e principais características.
+
+\subsection{Grin}
+\label{sec:grin}
+
+% Grin é uma startup presente em mais de 15 cidades da América Látina, oferecendo serviços de aluguel de patinetes elétricos. A sua ideia é ser uma alternativa sustentável de transporte, contribuindo para a redução de carros nas ruas, poluição e do ruído.
+Grin é uma \estrangeirismo{startup} presente em mais de 15 cidades da América Latina, oferecendo serviços de aluguel de patinetes elétricos. A sua ideia é ser uma alternativa sustentável de transporte, contribuindo para a redução de carros nas ruas, poluição e do ruído.
+
+% O serviço funciona por meio do aplicativo da companhia, disponível na App Store e Google Play. A partir dele, o usuário se cadastra, encontra a localidade do patinete mais próximo e o desbloqueia. O aplicativo informa a localização das Estações Grin, além de pontos da cidade a qual existe a possibilidade de encontrar e estacionar os patinetes, que por sua vez são monitorados e recolhidos todas as noites pela empresa.
+O serviço funciona por meio do aplicativo da companhia, disponível na App Store e Google Play. A partir dele, o usuário se cadastra, encontra a localidade do patinete mais próximo e o desbloqueia. O aplicativo informa a localização das Estações Grin, além de pontos da cidade onde se pode encontrar e estacionar os patinetes, que por sua vez são monitorados e recolhidos todas as noites pela empresa.
+
+% Seus veículos podem transitar em ciclovias e ciclofaixas com um limite de até 20km/h. O custo é de R$3,00 para o desbloqueio e o primeiro minuto de uso, após isso cada minuto adicional custa R$0,50. Os dez primeiros minutos do passeio são gratuitos e o horário de funcionamento é das 6h às 22h. 
+Seus veículos podem transitar em ciclovias e ciclofaixas com um limite de até \SI{20}{\km\per\hour}. O custo é de \reais{3} para o desbloqueio e o primeiro minuto de uso, após isso cada minuto adicional custa \reais{0.50}. Os dez primeiros minutos do passeio são gratuitos e o horário de funcionamento é das \SI{6}{\hour} às \SI{22}{\hour}.
+
+% Por conta das restrições ocasionadas pela pandemia COVID-19, a empresa viu seus negócios caírem e precisou congelar seus serviços oferecidos em território nacional. Até o fim do ano, o grupo Grow, detentor da marca Grin, pretende colocar de volta à circulação de seus veículos elétricos no estado de São Paulo com aproximadamente 15 mil patinetes para uso compartilhado entre seus usuários. Nesse contexto, essa empresa entra como uma concorrente secundária, podendo oferecer um serviço ligeiramente parecido entrando dentro do território de aplicação do Mobi UnB no decorrer dos meses.
+Por conta das restrições ocasionadas pela pandemia COVID-19, a empresa viu seus negócios caírem e precisou congelar seus serviços oferecidos em território nacional. Até o fim do ano, o grupo Grow, detentor da marca Grin, pretende colocar de volta à circulação de seus veículos elétricos no estado de São Paulo com aproximadamente 15 mil patinetes para uso compartilhado entre seus usuários. Nesse contexto, essa empresa entra como uma concorrente secundária, podendo oferecer um serviço ligeiramente parecido entrando dentro do território de aplicação do \nomeproduto\ no decorrer dos meses.
+
+
+\subsection{FlipOn}
+\label{sec:flipon}
+
+% FlipOn é uma empresa de mobilidade urbana com foco em meios de transporte elétricos, localizada na cidade de São Carlos. A empresa tem o projeto de chegar a 90 cidades brasileiras até o final de 2022, oferecendo modelo de licenciamento para possíveis parceiros (hotéis, restaurantes, cafés, lojas, comércios e empresários). 
+FlipOn é uma empresa de mobilidade urbana com foco em meios de transporte elétricos, localizada na cidade de São Carlos. A empresa tem o projeto de chegar a 90 cidades brasileiras até o final de 2022, oferecendo modelo de licenciamento para possíveis parceiros (hotéis, restaurantes, cafés, lojas, comércios e empresários).
+
+% O usuário, para utilizar os patinetes, deve baixar o aplicativo FlipOn (Play Store ou App Store)  em seu smartphone, realizar cadastro e estar de acordo com as orientações listadas. Para destravar o veículo, basta aproximar a tela do celular ao QR Code.
+O usuário, para utilizar os patinetes, deve baixar o aplicativo FlipOn (Play Store ou App Store)  em seu \estrangeirismo{smartphone}, realizar cadastro e estar de acordo com as orientações listadas. Para destravar o veículo, basta aproximar a tela do celular ao QR code.
+
+% O pagamento pode ser efetuado por PIX ou cartão de crédito. A tarifa é de R$ 3,20 para destravar o veículo, acrescidos de R$ 0,50 por minuto de uso. Ainda é possível contratar plano mensal, sendo compensado com tarifas promocionais.
+O pagamento pode ser efetuado por PIX ou cartão de crédito. A tarifa é de \reais{3.2} para destravar o veículo, acrescidos de \reais{0.5} por minuto de uso. Ainda é possível contratar plano mensal, sendo compensado com tarifas promocionais.
+
+% O sistema de gerenciamento informa aos licenciados detalhes da locação, como a localização do equipamento, nível da bateria e reporte de problemas.
+O sistema de gerenciamento informa aos licenciados detalhes da locação, como a localização do equipamento, nível da bateria e reporte de problemas.
+
+% Os usuários devem seguir normas definidas pelo Conselho Nacional de Trânsito, em relação ao tráfego de ruas, ciclovias e calçadas, velocidade permitida e equipamentos de segurança, mediante à concordância, através do aplicativo, com os termos de uso.
+Os usuários devem seguir normas definidas pelo Conselho Nacional de Trânsito, em relação ao tráfego de ruas, ciclovias e calçadas, velocidade permitida e equipamentos de segurança, mediante à concordância, através do aplicativo, com os termos de uso.
+
+% O modelo citado consiste no aluguel ou compra dos produtos pelos licenciados. O licenciado configura o sistema de acordo com a região definida e ativa, delimitando área de uso, com rastreamento dos patinetes e ativação pelo aplicativo. As licenças são categorizadas em pequena, média e grande, definidas pelo tamanho do investimento e da frota de patinetes correspondente. Aos licenciados, a FlipOn oferece manutenção dos patinetes com suporte de fábrica e reposição em até 24 horas, além de atendimento direto ao consumidor.
+O modelo citado consiste no aluguel ou compra dos produtos pelos licenciados. O licenciado configura o sistema de acordo com a região definida e ativa, delimitando área de uso, com rastreamento dos patinetes e ativação pelo aplicativo. As licenças são categorizadas em pequena, média e grande, definidas pelo tamanho do investimento e da frota de patinetes correspondente. Aos licenciados, a FlipOn oferece manutenção dos patinetes com suporte de fábrica e reposição em até \SI{24}{\hour}, além de atendimento direto ao consumidor.
+
+% A princípio, essa empresa entra como concorrente secundária da Mobi UnB, contudo, tendo seus planos de expansão concretizados, poderá atingir a região da mesma e se tornar uma concorrente direta.
+A princípio, essa empresa entra como concorrente secundária da \nomeproduto, contudo, tendo seus planos de expansão concretizados, poderá atingir a região da mesma e se tornar uma concorrente direta.
+
+
+\subsection{Bike Itaú}
+\label{sec:itau}
+
+% O Bike Itaú é um serviço oferecido pela empresa de Banco Itaú, entretanto não é necessário ter uma conta no banco para usar o serviço. Ela está disponível nas cidades brasileiras de São Paulo, Rio de Janeiro, Recife, Porto Alegre e Salvador. Eles disponibilizam as bicicletas em pontos estratégicos por todas as cidades que eles operam. Uma característica marcante é que em cada estação possui um mapa com as estações mais próximas da atual. 
+A Bike Itaú é um serviço oferecido pelo Banco Itaú, entretanto não é necessário ter uma conta no banco para usar o serviço. Ela está disponível nas cidades brasileiras de São Paulo, Rio de Janeiro, Recife, Porto Alegre e Salvador. Eles disponibilizam as bicicletas em pontos estratégicos por todas as cidades que eles operam. Uma característica marcante é que em cada estação possui um mapa com as estações mais próximas da atual.
+
+% Eles possuem um aplicativo chamado bike Itaú por onde é possível assinar o serviço. Os planos mais básicos são a R$ 8,00 a hora ou R$ 5,00 por 30 min de viagem. É possível também pegar a bicicleta em uma estação e depositar em outra sem necessidade de devolver na estação de origem. No app é possível verificar um mapa com, além das estações, se tem bicicletas disponíveis para aluguel.
+Eles possuem um aplicativo homônimo por onde é possível assinar o serviço. Os planos mais básicos são a \reais{8} a hora ou \reais{5} por \SI{30}{\minute} de viagem. É possível também pegar a bicicleta em uma estação e depositar em outra sem necessidade de devolver na estação de origem. No aplicativo é possível verificar um mapa com, além das estações, a disponibilidade de bicicletas para aluguel.
+
+% O aplicativo oferece dois tipos de veículos, com tração assistida e tração humana, ou seja, tem a opção de elétrica ou não. Vale mencionar que as bicicletas possuem iluminação que conferem uma maior segurança aos usuários. Está disponível para Android e IOs.
+O aplicativo oferece dois tipos de veículos, com tração assistida e tração humana, ou seja, tem a opção de bicicleta elétrica ou comum. Vale mencionar que as bicicletas possuem iluminação que conferem uma maior segurança aos usuários. Está disponível para Android e IOs.
+
+% Para liberação da bicicleta, a empresa oferece duas maneiras. A primeira é por meio de um cartão que, ao inserir na bicicleta desejada, a estação faz a autenticação e libera a bicicleta. A segunda forma é com o aplicativo, a pessoa solicita um código de liberação e assim que recebe, coloca o código na bicicleta e assim, o veículo é liberado. Para devolução basta encaixar a bicicleta na estação e esperar a confirmação sonora e por email para validar a devolução. Funciona das 6:00 até as 00:00.
+Para liberação da bicicleta, a empresa oferece duas maneiras. A primeira é por meio de um cartão que, ao inserir na bicicleta desejada, realiza a autenticação e libera a bicicleta. A segunda é com o aplicativo, solicitando um código de liberação que é digitado na bicicleta e, assim, o veículo é liberado. Para devolução basta encaixar a bicicleta na estação e esperar a confirmação sonora e por email. Funciona das 6:00 até as 00:00.

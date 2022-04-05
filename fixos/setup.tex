@@ -1,0 +1,60 @@
+\definecolor{blue}{RGB}{41,5,195}
+\makeatletter
+\hypersetup{
+%pagebackref=true,
+pdftitle={\@title},
+pdfauthor={\@author},
+pdfsubject={\imprimirpreambulo},
+pdfcreator={LaTeX with abnTeX2},
+pdfkeywords={PI1}{Projeto Integrador 1}{Universidade de Brasília}{UnB}{Faculdade UnB Gama}{FGA},
+colorlinks=true, % false: boxed links; true: colored links
+% linkcolor=blue, % color of internal links
+% citecolor=blue, % color of links to bibliography
+% filecolor=magenta, % color of file links
+% urlcolor=blue,
+bookmarksdepth=4
+}
+\makeatother
+% \setlength{\parindent}{1.3cm}
+% \setlength{\parskip}{0.2cm}
+% \makeindex
+
+% float options
+\floatplacement{figure}{htbp}   % Posição padrão de figuras: here > top > bottom > page
+\floatplacement{table}{htbp}    % Posição padrão de tabelas: here > top > bottom > page
+\floatstyle{plaintop}           % Força a caption no topo
+\restylefloat{table}            % Aplica o estilo a tabelas
+\restylefloat{figure}           % Aplica o estilo a figuras
+
+% siunitx options
+\sisetup{
+    mode = match ,                  % Seleciona fonte de texto/matemática automaticamente
+    locale = FR ,                   % Vírgula como separador decimal
+    list-final-separator = { e },   % Localização pt-BR
+    list-pair-separator = { e },    % Localização pt-BR
+    range-phrase = { a },           % Localização pt-BR
+    per-mode = symbol,              % Representa recíprocas de unidades com /
+}
+
+
+\addbibresource{bibliografia.bib}   % Adiciona o arquivo de referências
+
+
+\let\temp\ABNTEXchapterfont
+\renewcommand{\ABNTEXchapterfont}{\temp\color{azulunb}\bfseries}
+\renewcommand{\ABNTEXchapterfontsize}{\HUGE}
+\renewcommand{\ABNTEXsectionfontsize}{\LARGE}
+\renewcommand{\ABNTEXsubsectionfontsize}{\Large}
+\renewcommand{\ABNTEXsubsubsectionfontsize}{\large}
+\taburulecolor{azulunb}
+\arrayrulecolor{azulunb}
+
+\renewcommand{\theadfont}{\normalsize}
+
+\pagestyle{headings}
+
+\makenomencl
+\makeindex
+\graphicspath{{figuras/}}
+
+\frenchspacing

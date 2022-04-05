@@ -1,0 +1,132 @@
+\documentclass[
+	% -- opções da classe memoir -- https://www.ctan.org/pkg/memoir
+	12pt,				% tamanho da fonte
+	openright,			% capítulos começam em página ímpar
+	                    % (insere página vazia caso preciso)
+	oneside,			% caso queira imprimir em frente e verso, use twoside
+	a4paper,			% tamanho do papel.
+	% -- opções da classe abntex2 -- https://www.ctan.org/pkg/abntex2
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	brazilian   		% para trabalhos em inglês não é necessário alterar aqui
+	                    % altere o idioma após o comando \begin{document}
+	]{unbtex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Configura o documento além da classe unbtex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{fixos/pacotes}           % Importa todos os pacotes
+\input{fixos/novosComandos}     % Cria comandos novos
+\input{fixos/informacoes}       % Adiciona as informações deste documento
+\input{fixos/comandos}          % (re)Configura alguns comandos
+\input{fixos/setup}             % Configura pacotes
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Início do documento
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Configurações de linguagem
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\selectlanguage{brazilian}
+\thmnamebr
+\renewcommand{\bibname}{Referências}
+\renewcommand{\orientadorname}{Orientador:}     % Alterar para Orientadora, se for o caso
+\renewcommand{\coorientadorname}{Coorientador:} % Alterar para Coorientadora, se for o caso
+\renewcommand{\lstlistingname}{Código}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Inicia os elementos pré-textuais
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pretextual
+
+\imprimircapa
+\imprimirfolhaderosto*{}
+\input{fixos/fichaCatalografica}
+
+\input{editaveis/02_resumo}
+
+% Lista de Figuras
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+
+% Lista de Tabelas
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+
+% Lista de símbolos
+{\SingleSpacing
+	\printnomenclature[2cm]}
+\cleardoublepage
+
+% Sumário
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+
+% \input{editaveis/01_abreviaturas}
+% \input{editaveis/01_simbolos}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Inicia os elementos textuais
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textual
+
+\input{editaveis/03_introducao}
+\input{editaveis/04_termodeaberturadoprojeto}
+\input{editaveis/05_equipetrabalho}
+\input{editaveis/06_analisemercado}
+\input{editaveis/07_projetoconceitual}
+% \input{editaveis/08_orcamento}
+\input{editaveis/09_cronograma}
+% \input{editaveis/10_licoes}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Inicia os elementos pós-textuais
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\postextual
+
+% Bibliografia
+\bookmarksetup{startatroot}
+\defbibheading{bibliography}[\bibname]{\chapter*{#1}}
+\cleardoublepage
+\phantomsection
+\tocprintchapternonum
+\addcontentsline{toc}{chapter}{\texorpdfstring{\MakeTextUppercase{\bibname}}{\bibname}}
+\printbibliography
+\markboth{}{}
+
+% Apêndices
+\begin{apendicesenv}
+	\partapendices
+
+	\input{editaveis/11_apendices}
+
+\end{apendicesenv}
+
+% Anexos
+% \begin{anexosenv}
+% \partanexos
+
+% % \input{editaveis/12_anexos}
+
+% \end{anexosenv}
+
+% Índice remissivo
+\printindex
+
+
+\end{document}
